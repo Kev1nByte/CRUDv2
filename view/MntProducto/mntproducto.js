@@ -54,3 +54,41 @@ $(document).ready(function(){
 		}
 	}).DataTable();
 });
+
+function editar(prod_id){
+    console.log(prod_id)
+}
+
+function eliminar(prod_id){
+    swal.fire({
+        title: 'CRUD',
+        text: "Desea Eliminar el Registro?",
+        icon: 'error',
+        showCancelButton: true,
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            $.post("../../controller/producto.php?op=eliminar",{prod_id:prod_id},function (data) {
+
+            });
+
+            $('#producto_data').DataTable().ajax.reload();	
+
+            swal.fire(
+                'Eliminado!',
+                'El registro se elimino correctamente.',
+                'success'
+            )
+        }
+    })
+}
+
+$(document).on("click","#btnnuevo", function(){
+    $('#mdltitulo').html('Nuevo Registro');
+    $('#modalmantenimiento').modal('show');
+});
+
+init();
