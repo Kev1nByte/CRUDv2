@@ -17,3 +17,7 @@
 <script src="../../public/datatables/jszip.min.js"></script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script src="../../public/lib/select2/js/select2.min.js"></script>
+
+<!-- <script type="text/javascript" src="mntproducto.js"></script> -->
